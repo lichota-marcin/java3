@@ -19,9 +19,7 @@ public class Task3 {
                 .sorted(Comparator.naturalOrder())
                 .toList();
         lowerList.forEach(System.out::println);
-        assertThat(lowerList.getFirst()).isEqualTo("abibaba");
-        assertThat(lowerList.get(1)).isEqualTo("amitabh");
-        assertThat(lowerList).hasSize(2);
+        assertThat(lowerList).containsExactly("abibaba","amitabh");
     }
 
     //7.1

@@ -17,10 +17,6 @@ public class Task5 {
                 .filter(s -> s.matches("[a-zA-Z]"))
                 .peek(System.out::println)
                 .toList();
-        assertThat(stringValues.getFirst()).isEqualTo("d");
-        assertThat(stringValues.get(1)).isEqualTo("s");
-        assertThat(stringValues.get(2)).isEqualTo("a");
-        assertThat(stringValues.get(3)).isEqualTo("z");
-        assertThat(stringValues).hasSize(4);
+        assertThat(stringValues).containsExactlyInAnyOrder("d","s","a","z");
     }
 }

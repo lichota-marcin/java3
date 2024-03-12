@@ -21,8 +21,7 @@ public class Task2 {
                 .toArray(Integer[]::new);
         System.out.println(Arrays.toString(evenArray));
 
-        assertThat(evenArray).contains(2, 4, 6, 8);
-        assertThat(evenArray).hasSize(4);
+        assertThat(evenArray).containsExactlyInAnyOrder(2, 4, 6, 8);
     }
 
     //5.
@@ -35,8 +34,6 @@ public class Task2 {
                 .sorted(Comparator.reverseOrder())
                 .toList();
         upperCList.forEach(System.out::println);
-        assertThat(upperCList.getFirst()).isEqualTo("C2");
-        assertThat(upperCList.get(1)).isEqualTo("C1");
-        assertThat(upperCList).hasSize(2);
+        assertThat(upperCList).containsExactly("C2","C1");
     }
 }
