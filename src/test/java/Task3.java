@@ -1,6 +1,5 @@
 import org.junit.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
@@ -9,7 +8,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class Task3 {
 
-    List<String> memberNames = Arrays.asList("Amitabh","Shekhar","Aman","Rahul","Shahrukh","Abibaba","Salman","Yana","Lokesh");
+    List<String> memberNames = Arrays.asList("Amitabh", "Shekhar", "Aman", "Rahul", "Shahrukh", "Abibaba", "Salman", "Yana", "Lokesh");
+
     //6.
     @Test
     public void namesStartingWithLowerCaseASorted() {
@@ -23,6 +23,7 @@ public class Task3 {
         assertThat(lowerList.get(1)).isEqualTo("amitabh");
         assertThat(lowerList).hasSize(2);
     }
+
     //7.1
     @Test
     public void allElementsContainLetterS() {
@@ -31,6 +32,7 @@ public class Task3 {
         assertThat(allElementsContainLetterS).isEqualTo(false);
 
     }
+
     //7.2
     @Test
     public void anyElementContainsLetterS() {
@@ -38,25 +40,28 @@ public class Task3 {
                 .anyMatch(ch -> ch.contains("S"));
         assertThat(anyElementContainsLetterS).isEqualTo(true);
     }
+
     //7.3
     @Test
-    public void noElementsContainLetterH(){
+    public void noElementsContainLetterH() {
         boolean noElementsContainH = memberNames.stream()
                 .noneMatch(ch -> ch.contains("H"));
         assertThat(noElementsContainH).isEqualTo(true);
     }
+
     //9.
     @Test
-    public void elementsStartingWithLetterA (){
+    public void elementsStartingWithLetterA() {
         long elementsStartingWithLetterA = memberNames.stream()
                 .filter(ch -> ch.startsWith("A"))
                 .count();
         System.out.println(elementsStartingWithLetterA);
         assertThat(elementsStartingWithLetterA).isEqualTo(3);
     }
+
     //10.
     @Test
-    public void findFirstElementStartingWithLetterL (){
+    public void findFirstElementStartingWithLetterL() {
         String firstL = memberNames.stream()
                 .filter(ch -> ch.startsWith("L"))
                 .findFirst()
