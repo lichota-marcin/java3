@@ -39,14 +39,14 @@ public class Task4 {
     @Test
     public void elementAsKeyAndValueAsOccurrence() {
         ArrayList<Integer> numbersList = new ArrayList<>(Arrays.asList(1, 1, 2, 3, 3, 3, 4, 5, 6, 6, 6, 7));
-        Map<Integer, Long> mapOfOccurences = numbersList.stream()
+        Map<Integer, Long> mapOfOccurrences = numbersList.stream()
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
-        for (Integer name : mapOfOccurences.keySet()) {
+        for (Integer name : mapOfOccurrences.keySet()) {
             String key = name.toString();
-            String value = mapOfOccurences.get(name).toString();
+            String value = mapOfOccurrences.get(name).toString();
             System.out.println(key + " " + value);
         }
-        assertThat(mapOfOccurences.get(1)).isEqualTo(2);
-        assertThat(mapOfOccurences.get(6)).isEqualTo(3);
+        assertThat(mapOfOccurrences.get(1)).isEqualTo(2);
+        assertThat(mapOfOccurrences.get(6)).isEqualTo(3);
     }
 }

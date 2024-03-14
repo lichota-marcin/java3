@@ -13,8 +13,9 @@ public class Task1 {
     public void streamContainsNumbersFrom1To9() {
         Stream<Integer> streamTask1_1 = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
         streamTask1_1.forEach(System.out::println);
-        assertThat(streamTask1_1).contains(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        assertThat(streamTask1_1).hasSize(4);
+        Stream<Integer> streamTask1_1_copy = Stream.of(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        assertThat(streamTask1_1_copy).contains(1, 2, 3, 4, 5, 6, 7, 8, 9);
+
     }
 
     //2.
@@ -22,8 +23,8 @@ public class Task1 {
     public void streamContains20Numbers() {
         Stream<Integer> streamTask1_2 = Stream
                 .generate(new Random()::nextInt)
+                .peek(System.out::println)
                 .limit(20);
-        streamTask1_2.forEach(System.out::println);
         assertThat(streamTask1_2).hasSize(20);
     }
 
