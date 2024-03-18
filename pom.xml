@@ -18,7 +18,7 @@
     </properties>
 
     <build>
-        <pluginManagement>
+
             <plugins>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -49,7 +49,7 @@
                     </dependencies>
                 </plugin>
             </plugins>
-        </pluginManagement>
+
     </build>
 
     <dependencyManagement>
@@ -83,6 +83,18 @@
             <artifactId>assertj-core</artifactId>
             <version>3.24.2</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+        <groupId>org.aspectj</groupId>
+        <artifactId>aspectjrt</artifactId>
+        <version>${aspectj.version}</version>
+        <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>${aspectj.version}</version>
         </dependency>
     </dependencies>
 </project>

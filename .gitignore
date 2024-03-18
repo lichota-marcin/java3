@@ -3,3 +3,6 @@
 /.idea/workspace.xml
 target/
 .idea/
+allure-report
+allure-results
+.gitignore
